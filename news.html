@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="bg-indigo-700 text-white p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl sm:text-2xl font-bold">🗞️ News Explorer</h1>
+      <a href="index.html" class="text-sm hover:underline">⬅ Back to Main</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-10">
+    <div class="bg-white shadow-md rounded-lg p-6 border border-indigo-100 mb-6">
+      <label for="searchTerm" class="block text-lg font-semibold mb-2">Search for News</label>
+      <div class="flex flex-col sm:flex-row items-stretch gap-4">
+        <input
+          id="searchTerm"
+          type="text"
+          placeholder="e.g. politics, technology, movies"
+          class="flex-1 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <button
+          onclick="getNews()"
+          class="bg-indigo-600 text-white px-5 py-2 rounded-md hover:bg-indigo-700 transition"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- News Articles -->
+    <div id="newsResult" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t text-center text-sm text-gray-500 py-4">
+    © 2025 Aisar Huzaifi • Powered by NewsAPI & Tailwind CSS
+  </footer>
+
+  <!-- Script -->
+  <script src="js/news.js"></script>
+
+</body>
+</html>

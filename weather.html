@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌤 Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="bg-white text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold">🌤 Weather Dashboard</h1>
+      <p class="text-sm md:text-base">Check real-time weather using the OpenWeather API</p>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow max-w-4xl mx-auto px-4 py-10">
+    <!-- Input Section -->
+    <section class="bg-white rounded-xl shadow-md p-6 border border-gray-200 mb-6">
+      <label for="cityInput" class="block mb-2 font-medium text-gray-700">Enter city name:</label>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input type="text" id="cityInput" placeholder="e.g. Kuala Lumpur" class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button onclick="getWeather()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Get Weather</button>
+      </div>
+    </section>
+
+    <!-- Result Section -->
+    <section id="weatherResult" class="mb-8 text-gray-700 text-lg font-medium px-2"></section>
+
+    <!-- Chart Section -->
+    <section class="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+      <h2 class="text-xl font-semibold mb-4 text-blue-600">🌡 Temperature Chart (Next 5 Days)</h2>
+      <canvas id="weatherChart" class="w-full h-64"></canvas>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center text-gray-600 py-4 text-sm">
+    &copy; 2025 Yasmin Aisyah | Built with Tailwind CSS, Chart.js, and OpenWeather API
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+</html>
